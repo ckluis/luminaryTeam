@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Luminary Planning — 24-Expert AI Review Framework</title>
+<title>Luminary Planning — 39-Expert AI Review Framework</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Inconsolata:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -632,7 +632,7 @@
 <nav class="topnav">
   <a class="wordmark" href="#">
     Luminary
-    <span>v1.1 · 24 agents</span>
+    <span>v2.0 · 39 agents</span>
   </a>
   <ul class="nav-links">
     <li><a href="#how-it-works">How It Works</a></li>
@@ -646,8 +646,8 @@
 <!-- HERO -->
 <section class="hero">
   <p class="overline">Multi-Agent Technical Review Framework</p>
-  <h1>24 experts.<br><span class="accent">One audit.</span><br>No mercy.</h1>
-  <p class="lede">Drop in your codebase, spec, architecture decision, landing page, or launch plan. Get a structured adversarial review from 24 domain experts — engineering, product, data, and go-to-market — each independent, each opinionated, each synthesized into actionable recommendations.</p>
+  <h1>39 experts.<br><span class="accent">One audit.</span><br>No mercy.</h1>
+  <p class="lede">Drop in your codebase, spec, architecture decision, landing page, or launch plan. Get a structured adversarial review from 39 domain experts — engineering, product, design, data, AI, safety, and go-to-market — each independent, each opinionated, each synthesized into actionable recommendations. A rigorous intent-classification phase picks the 5–10 members relevant to the work before any audit begins.</p>
   <div class="hero-actions">
     <a href="https://github.com/ckluis/luminaryTeam" class="btn-primary">Get the Prompts →</a>
     <a href="#how-it-works" class="btn-secondary">See how it works</a>
@@ -655,11 +655,11 @@
 
   <div class="stats-row">
     <div class="stat">
-      <div class="num"><em>24</em></div>
+      <div class="num"><em>39</em></div>
       <div class="label">Domain experts</div>
     </div>
     <div class="stat">
-      <div class="num"><em>6</em></div>
+      <div class="num"><em>7</em></div>
       <div class="label">Protocol phases</div>
     </div>
     <div class="stat">
@@ -676,13 +676,19 @@
 <!-- HOW IT WORKS -->
 <section class="section" id="how-it-works">
   <p class="overline">Protocol</p>
-  <h2>Six phases.<br><span class="accent">No shortcuts.</span></h2>
+  <h2>Seven phases.<br><span class="accent">No shortcuts.</span></h2>
   <div class="phases-grid">
+    <div class="phase-card">
+      <span class="phase-num">00</span>
+      <span class="phase-label">Phase 0</span>
+      <h3>Intent Classification</h3>
+      <p>Before any audit, the orchestrator classifies the target — artifact type, work dimensions, risk surfaces, audience and locale. Ambiguity triggers a clarifying question, not a guess. Wrong classification here ripples through everything that follows.</p>
+    </div>
     <div class="phase-card">
       <span class="phase-num">01</span>
       <span class="phase-label">Phase 1</span>
       <h3>Frame &amp; Scope</h3>
-      <p>The orchestrator summarizes the input, selects the relevant roster subset, and defines what "done" looks like — before any audit begins.</p>
+      <p>The orchestrator restates the request, confirms the Phase 0 classification with the user (one correction window), and locks the roster of 5–10 relevant members.</p>
     </div>
     <div class="phase-card">
       <span class="phase-num">02</span>
@@ -700,7 +706,7 @@
       <span class="phase-num">04</span>
       <span class="phase-label">Phase 4</span>
       <h3>Adversarial Clash</h3>
-      <p>Members with conflicting positions debate directly. The steelman rule is enforced: you argue the opponent's position charitably before any rebuttal. Skipping disqualifies the rebuttal.</p>
+      <p>Members with conflicting positions debate directly. The steelman rule is enforced: you argue the opponent's position charitably before any rebuttal. Excluded members can be pulled in mid-clash if the conflict touches their domain.</p>
     </div>
     <div class="phase-card">
       <span class="phase-num">05</span>
@@ -751,16 +757,16 @@
 <!-- ROSTER -->
 <section class="roster-section" id="roster">
   <p class="overline">The Team</p>
-  <h2>24 experts.<br><span class="accent">Every domain covered.</span></h2>
-  <p class="section-lede">Each agent brings a defined domain, a distinct personality, explicit conflict vectors, and a signature challenge question. You don't need all 24 — select the subset that covers your highest-risk areas.</p>
+  <h2>39 experts.<br><span class="accent">Every domain covered.</span></h2>
+  <p class="section-lede">Each agent brings a defined domain, a distinct personality, explicit conflict vectors, and a signature challenge question. You don't need all 39 — Phase 0 picks the 5–10 that cover your highest-risk areas.</p>
 
   <div class="domain-filter">
-    <button class="filter-btn active" onclick="filterAgents('all', this)">All 24</button>
+    <button class="filter-btn active" onclick="filterAgents('all', this)">All 39</button>
     <button class="filter-btn" onclick="filterAgents('systems', this)">Systems</button>
-    <button class="filter-btn" onclick="filterAgents('product', this)">Product</button>
-    <button class="filter-btn" onclick="filterAgents('data', this)">Data</button>
-    <button class="filter-btn" onclick="filterAgents('safety', this)">Safety</button>
-    <button class="filter-btn" onclick="filterAgents('marketing', this)">Marketing</button>
+    <button class="filter-btn" onclick="filterAgents('product', this)">Product &amp; Design</button>
+    <button class="filter-btn" onclick="filterAgents('data', this)">Data &amp; Analytics</button>
+    <button class="filter-btn" onclick="filterAgents('safety', this)">Safety &amp; Governance</button>
+    <button class="filter-btn" onclick="filterAgents('marketing', this)">Marketing &amp; Brand</button>
   </div>
 
   <div class="agents-grid" id="agentsGrid">
@@ -980,6 +986,141 @@
       <div class="agent-focus">Framing, signaling, defaults, perception engineering. The irrational-but-real drivers of human choice that spreadsheets miss.</div>
       <div class="agent-redflag"><span class="redflag-label">⚑</span> Decisions that assume a rational consumer; removing friction that was carrying meaning</div>
     </div>
+    <div class="agent-card" data-group="product">
+      <div class="agent-header">
+        <div class="agent-name">Torrey Podmajersky</div>
+        <span class="domain-tag domain-copy">Microcopy</span>
+      </div>
+      <div class="agent-domain">UX Writing &amp; Microcopy</div>
+      <div class="agent-focus">Interface voice, error messages, empty states, destructive-action clarity. Treats every string as a UX decision, not a style preference.</div>
+      <div class="agent-redflag"><span class="redflag-label">⚑</span> Errors that describe what broke but not what to do next; generic "OK/Confirm" buttons on destructive actions</div>
+    </div>
+    <div class="agent-card" data-group="data">
+      <div class="agent-header">
+        <div class="agent-name">Ralph Kimball</div>
+        <span class="domain-tag domain-data">Warehouse</span>
+      </div>
+      <div class="agent-domain">Dimensional Modeling &amp; Data Warehousing</div>
+      <div class="agent-focus">Facts and dimensions, grain discipline, slowly-changing dimensions, conformed dimensions across marts. Analytics modeling on its own terms.</div>
+      <div class="agent-redflag"><span class="redflag-label">⚑</span> Fact tables where the team can't state the grain in one sentence; unconformed dimensions across marts</div>
+    </div>
+    <div class="agent-card" data-group="product">
+      <div class="agent-header">
+        <div class="agent-name">Matthew Butterick</div>
+        <span class="domain-tag domain-ui">Type</span>
+      </div>
+      <div class="agent-domain">Typography</div>
+      <div class="agent-focus">Type scale, measure, leading, hierarchy, web font loading. Bad typography is a tax readers pay on every sentence — and it's invisible until it isn't.</div>
+      <div class="agent-redflag"><span class="redflag-label">⚑</span> Body text under ~16px; measures over ~90ch; line-heights at 1.0–1.2 on body copy</div>
+    </div>
+    <div class="agent-card" data-group="product">
+      <div class="agent-header">
+        <div class="agent-name">Peter Morville</div>
+        <span class="domain-tag domain-ux">IA</span>
+      </div>
+      <div class="agent-domain">Information Architecture</div>
+      <div class="agent-focus">Taxonomy, labeling, navigation, findability, URL structure. IA is the architecture of shared understanding between the system and its users.</div>
+      <div class="agent-redflag"><span class="redflag-label">⚑</span> Navigation labels that need tooltips to disambiguate; "Other" or "Misc" categories doing heavy lifting</div>
+    </div>
+    <div class="agent-card" data-group="product">
+      <div class="agent-header">
+        <div class="agent-name">Teresa Torres</div>
+        <span class="domain-tag domain-prod">Discovery</span>
+      </div>
+      <div class="agent-domain">Product Discovery &amp; Continuous Research</div>
+      <div class="agent-focus">Opportunity-solution trees, outcomes over outputs, weekly customer touchpoints, assumption testing. The counterweight to intuition-led product taste.</div>
+      <div class="agent-redflag"><span class="redflag-label">⚑</span> Roadmap items with no stated customer opportunity; outcomes framed as outputs</div>
+    </div>
+    <div class="agent-card" data-group="safety">
+      <div class="agent-header">
+        <div class="agent-name">John Allspaw</div>
+        <span class="domain-tag domain-infra">Resilience</span>
+      </div>
+      <div class="agent-domain">Resilience &amp; Safety Engineering</div>
+      <div class="agent-focus">Adaptive capacity, near-miss analysis, graceful degradation, incident review quality. Reliability is the presence of recovery, not the absence of failure.</div>
+      <div class="agent-redflag"><span class="redflag-label">⚑</span> Incident reviews that conclude with "human error" as the root cause; runbooks never executed in a real incident</div>
+    </div>
+    <div class="agent-card" data-group="safety">
+      <div class="agent-header">
+        <div class="agent-name">Timnit Gebru</div>
+        <span class="domain-tag domain-ai">AI Ethics</span>
+      </div>
+      <div class="agent-domain">Responsible AI &amp; Algorithmic Harm</div>
+      <div class="agent-focus">Disparate impact, training data provenance, model cards, subgroup performance, labor behind datasets, deployment context vs. training context.</div>
+      <div class="agent-redflag"><span class="redflag-label">⚑</span> Model shipped without a model card, training data provenance, or subgroup performance numbers</div>
+    </div>
+    <div class="agent-card" data-group="systems">
+      <div class="agent-header">
+        <div class="agent-name">Alex Russell</div>
+        <span class="domain-tag domain-perf">Web Perf</span>
+      </div>
+      <div class="agent-domain">Web Performance &amp; Frontend Platform</div>
+      <div class="agent-focus">JS payload, main-thread time, hydration cost, Core Web Vitals on mid-tier Android over real mobile networks. Frontend perf as an ethical obligation.</div>
+      <div class="agent-redflag"><span class="redflag-label">⚑</span> No JS/LCP budget enforced in CI; performance claims based only on desktop devtools</div>
+    </div>
+    <div class="agent-card" data-group="product">
+      <div class="agent-header">
+        <div class="agent-name">Daniele Procida</div>
+        <span class="domain-tag domain-dx">Docs</span>
+      </div>
+      <div class="agent-domain">Technical Writing &amp; Docs Architecture</div>
+      <div class="agent-focus">Diátaxis — tutorials, how-to, reference, explanation — kept distinct. Documentation as a structural problem, not a writing problem.</div>
+      <div class="agent-redflag"><span class="redflag-label">⚑</span> Docs site with no tutorial, or how-to guides mixed with explanations such that readers can't execute</div>
+    </div>
+    <div class="agent-card" data-group="safety">
+      <div class="agent-header">
+        <div class="agent-name">Kat Holmes</div>
+        <span class="domain-tag domain-a11y">Inclusive</span>
+      </div>
+      <div class="agent-domain">Inclusive Design</div>
+      <div class="agent-focus">Mismatch between human ability and product assumption — permanent, temporary, and situational. "Solve for one, extend to many." Distinct from WCAG compliance.</div>
+      <div class="agent-redflag"><span class="redflag-label">⚑</span> Personas that share core abilities, languages, and contexts; design research only with users who look like the team</div>
+    </div>
+    <div class="agent-card" data-group="product">
+      <div class="agent-header">
+        <div class="agent-name">Val Head</div>
+        <span class="domain-tag domain-ui">Motion</span>
+      </div>
+      <div class="agent-domain">Interface Motion Design</div>
+      <div class="agent-focus">Easing, choreography, loading states, `prefers-reduced-motion`, functional vs. decorative animation. Motion that explains, not motion that impresses.</div>
+      <div class="agent-redflag"><span class="redflag-label">⚑</span> <code>prefers-reduced-motion</code> unhandled; state transitions where the user can't see what changed</div>
+    </div>
+    <div class="agent-card" data-group="safety">
+      <div class="agent-header">
+        <div class="agent-name">Heather Meeker</div>
+        <span class="domain-tag domain-priv">OSS/IP</span>
+      </div>
+      <div class="agent-domain">Open-Source Licensing &amp; IP</div>
+      <div class="agent-focus">License compatibility, AGPL/GPL exposure, SBOMs, trademark clearance, model/dataset license terms. Obligations that attach silently and surface late.</div>
+      <div class="agent-redflag"><span class="redflag-label">⚑</span> AGPL code in a SaaS product without compliance analysis; no SBOM or SBOM not refreshed per release</div>
+    </div>
+    <div class="agent-card" data-group="marketing">
+      <div class="agent-header">
+        <div class="agent-name">Paula Scher</div>
+        <span class="domain-tag domain-ui">Brand</span>
+      </div>
+      <div class="agent-domain">Brand Identity Design</div>
+      <div class="agent-focus">Logotype, mark, color system, identity coherence across surfaces. Brand is not a logo; brand is a coherent visual argument extending to a hundred surfaces.</div>
+      <div class="agent-redflag"><span class="redflag-label">⚑</span> Identity that lives only on the marketing site while product UI uses different type, color, and voice</div>
+    </div>
+    <div class="agent-card" data-group="marketing">
+      <div class="agent-header">
+        <div class="agent-name">Shawn Wang (Swyx)</div>
+        <span class="domain-tag domain-dx">DevRel</span>
+      </div>
+      <div class="agent-domain">Developer Relations &amp; Community</div>
+      <div class="agent-focus">First-run experience, public signal, learn-in-public loops, starter templates, community surfaces. DevRel as product feedback, not content calendar.</div>
+      <div class="agent-redflag"><span class="redflag-label">⚑</span> No measurable "signup to first success" time; community questions older than a week unanswered</div>
+    </div>
+    <div class="agent-card" data-group="product">
+      <div class="agent-header">
+        <div class="agent-name">John Yunker</div>
+        <span class="domain-tag domain-ux">Global</span>
+      </div>
+      <div class="agent-domain">Localization &amp; Global Design</div>
+      <div class="agent-focus">i18n architecture, l10n quality, global gateway, bidirectional text, CJK layout, cultural assumptions baked into the "default" user.</div>
+      <div class="agent-redflag"><span class="redflag-label">⚑</span> Strings hard-coded in the UI; no plural rule handling; text containers sized for English only</div>
+    </div>
   </div>
 </section>
 
@@ -997,7 +1138,7 @@
           <span class="c"># In your Claude project:</span><br>
           <span class="k">System:</span> <span class="v">[paste luminaryPrompt.md]</span><br>
           <span class="k">User:</span>   <span class="v">[paste your codebase / spec]</span><br>
-          <span class="e">→ Full 24-member adversarial audit</span>
+          <span class="e">→ Full 39-member adversarial audit</span>
         </div>
       </div>
       <div class="usage-card">
@@ -1031,7 +1172,7 @@
 <section class="rules-section" id="rules">
   <p class="overline">Protocol Rules</p>
   <h2>The rules that make<br><span class="accent">it actually work.</span></h2>
-  <p class="section-lede">Luminary's value comes from enforced constraints. These aren't suggestions — they're the structural guarantees that prevent a 24-expert system from collapsing into noise.</p>
+  <p class="section-lede">Luminary's value comes from enforced constraints. These aren't suggestions — they're the structural guarantees that prevent a 39-expert system from collapsing into noise.</p>
   <div class="rules-list">
     <div class="rule-item">
       <div class="rule-icon">→</div>
@@ -1173,6 +1314,86 @@
         </div>
         <p>Build a tribe deliberately vs. assume a great product markets itself. Godin wants the permission asset — list, subscribers, story carriers — built on purpose. Jobs expects inevitability to do that work for free.</p>
       </div>
+      <div class="conflict-card">
+        <div class="vs-row">
+          <span class="vs-name">Torres</span>
+          <span class="vs-badge">vs</span>
+          <span class="vs-name">Jobs</span>
+        </div>
+        <p>Evidence-led discovery vs. visionary product taste. Torres wants opportunities mapped, assumptions tested, outcomes named. Jobs wants the team to see what isn't there yet and build it anyway. Neither is wrong; both can fail on their own.</p>
+      </div>
+      <div class="conflict-card">
+        <div class="vs-row">
+          <span class="vs-name">Gebru</span>
+          <span class="vs-badge">vs</span>
+          <span class="vs-name">Karpathy</span>
+        </div>
+        <p>Deployment harm on named populations vs. benchmark-led capability. Karpathy evaluates on what the model can do. Gebru evaluates on who it will fail, and whether anyone measured that before it shipped. Both are right; only one comes up in the planning meeting.</p>
+      </div>
+      <div class="conflict-card">
+        <div class="vs-row">
+          <span class="vs-name">Gebru</span>
+          <span class="vs-badge">vs</span>
+          <span class="vs-name">Cavoukian</span>
+        </div>
+        <p>Collect the demographic data to audit fairness vs. minimize data collection on principle. A genuine tension, not a rhetorical one — both positions are ethically grounded and structurally incompatible without a specific design choice.</p>
+      </div>
+      <div class="conflict-card">
+        <div class="vs-row">
+          <span class="vs-name">Russell</span>
+          <span class="vs-badge">vs</span>
+          <span class="vs-name">Carmack</span>
+        </div>
+        <p>Web payload and real-device performance vs. backend/CPU hot-path focus. Carmack owns the algorithmic floor. Russell owns the 4MB of JS that gets shipped to a $200 Android. Both call themselves "performance." They aren't the same conversation.</p>
+      </div>
+      <div class="conflict-card">
+        <div class="vs-row">
+          <span class="vs-name">Allspaw</span>
+          <span class="vs-badge">vs</span>
+          <span class="vs-name">Majors</span>
+        </div>
+        <p>Adaptive capacity and human recovery vs. telemetry-first reliability. Majors wants every signal instrumented. Allspaw wants the operator prepared for the signal the system doesn't emit. Dashboards don't recover from incidents — people do.</p>
+      </div>
+      <div class="conflict-card">
+        <div class="vs-row">
+          <span class="vs-name">Kimball</span>
+          <span class="vs-badge">vs</span>
+          <span class="vs-name">Celko</span>
+        </div>
+        <p>Dimensional denormalization for analytics vs. 3NF discipline. OLTP and OLAP have different laws. Celko wants every normal form honored. Kimball wants the analyst's query to return in seconds. Both are right about different schemas.</p>
+      </div>
+      <div class="conflict-card">
+        <div class="vs-row">
+          <span class="vs-name">Head</span>
+          <span class="vs-badge">vs</span>
+          <span class="vs-name">Sutton</span>
+        </div>
+        <p>Expressive motion vs. vestibular safety. Head designs motion as communication. Sutton enforces reduced-motion as an accessibility floor. The product that serves both is a product that takes the <code>prefers-reduced-motion</code> contract seriously.</p>
+      </div>
+      <div class="conflict-card">
+        <div class="vs-row">
+          <span class="vs-name">Podmajersky</span>
+          <span class="vs-badge">vs</span>
+          <span class="vs-name">Ogilvy</span>
+        </div>
+        <p>In-product helpful voice vs. persuasive advertising voice. Ogilvy sells to someone who hasn't bought. Podmajersky writes for someone who already bought and now has to complete a task. Same company, different reader, different rules.</p>
+      </div>
+      <div class="conflict-card">
+        <div class="vs-row">
+          <span class="vs-name">Yunker</span>
+          <span class="vs-badge">vs</span>
+          <span class="vs-name">Dunford</span>
+        </div>
+        <p>Per-market positioning vs. US-default GTM translated outward. Yunker says each market needs its own best-fit narrative. Dunford says positioning is the foundation. Both are right — but a translated homepage is not a positioning strategy.</p>
+      </div>
+      <div class="conflict-card">
+        <div class="vs-row">
+          <span class="vs-name">Holmes</span>
+          <span class="vs-badge">vs</span>
+          <span class="vs-name">Sutton</span>
+        </div>
+        <p>Inclusive design as practice vs. WCAG compliance as a floor. Sutton enforces the contract. Holmes asks who is still excluded once every checkbox is green. Compliance is the minimum viable accessibility; inclusive design is the minimum viable practice.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -1180,7 +1401,7 @@
 <!-- FOOTER -->
 <footer>
   <div class="footer-brand">Luminary Planning</div>
-  <div class="footer-note">24 experts. One audit. No mercy.</div>
+  <div class="footer-note">39 experts. One audit. No mercy.</div>
   <div class="footer-links">
     <a href="https://github.com/ckluis/luminaryTeam">GitHub</a>
     <a href="https://github.com/ckluis/luminaryTeam/blob/main/luminaryPrompt.md">Orchestrator Prompt</a>
