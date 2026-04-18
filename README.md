@@ -1,6 +1,6 @@
 # Luminary Planning
 
-A multi-agent technical review framework. Drop in your codebase, feature spec, or architecture decision and get a structured audit from 19 domain-expert personas — each independent, each adversarial, each synthesized into actionable recommendations.
+A multi-agent technical and go-to-market review framework. Drop in your codebase, feature spec, architecture decision, landing page, or launch plan and get a structured audit from 24 domain-expert personas — each independent, each adversarial, each synthesized into actionable recommendations.
 
 ---
 
@@ -39,9 +39,9 @@ Drill in on any finding. Request re-audits. Ask members to respond to new inform
 
 ---
 
-## The 19-Member Roster
+## The 24-Member Roster
 
-Each agent brings a specific domain, a defined personality, explicit conflict vectors, and a signature challenge question. Select the subset relevant to your audit — you don't need all 19 every time.
+Each agent brings a specific domain, a defined personality, explicit conflict vectors, and a signature challenge question. Select the subset relevant to your audit — you don't need all 24 every time.
 
 | Agent | Domain | Core Focus |
 |---|---|---|
@@ -64,6 +64,11 @@ Each agent brings a specific domain, a defined personality, explicit conflict ve
 | **Edward Tufte** | Data Visualization | Data-ink ratio, chartjunk, information density, whether viz encodes truth |
 | **Hadley Wickham** | Data Science & Analytics | Tidy data, pipeline reproducibility, grammar of graphics |
 | **Andrew Gelman** | Statistical Rigor | Metrics validity, A/B test power, false positive rates, overconfident inference |
+| **David Ogilvy** | Advertising & Brand Copywriting | Headline craft, specific promises, research-led persuasion, brand as long-term asset |
+| **Seth Godin** | Marketing Strategy & Permission | Remarkable products, smallest viable audience, permission over interruption |
+| **April Dunford** | Positioning & Go-to-Market | Best-at-something-for-somebody, competitive alternatives, sales narrative |
+| **Ann Handley** | Content Marketing & Business Writing | Reader-first writing, voice consistency, useful-before-promotional |
+| **Rory Sutherland** | Behavioral Marketing & Persuasion | Framing, signaling, perception engineering, irrational-but-real drivers of choice |
 
 ---
 
@@ -114,7 +119,12 @@ luminaryProcess/
 ├── agentAnnCavoukian.md
 ├── agentEdwardTufte.md
 ├── agentHadleyWickham.md
-└── agentAndrewGelman.md
+├── agentAndrewGelman.md
+├── agentDavidOgilvy.md
+├── agentSethGodin.md
+├── agentAprilDunford.md
+├── agentAnnHandley.md
+└── agentRorySutherland.md
 ```
 
 ---
@@ -128,6 +138,11 @@ Some members reliably clash. These tensions are features, not bugs — they surf
 - **Kleppmann vs. Torvalds** — Embrace distributed complexity vs. keep it simple and modular
 - **Schneier vs. Karpathy** — Deterministic threat models vs. probabilistic LLM failure modes
 - **Cavoukian vs. Majors** — Data minimization vs. instrument everything for observability
+- **Ogilvy vs. Godin** — Classical persuasion at scale vs. remarkable products that earn permission
+- **Dunford vs. Ogilvy** — Crisp positioning first vs. great copy leading the work
+- **Sutherland vs. Gelman** — Psycho-logic and perception vs. measurable statistical rigor
+- **Handley vs. Ogilvy** — Useful-before-promotional vs. persuasion-first selling
+- **Godin vs. Jobs** — Deliberately build a tribe/permission asset vs. assume a great product markets itself
 
 ---
 

@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Luminary Planning — 19-Expert AI Review Framework</title>
+<title>Luminary Planning — 24-Expert AI Review Framework</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Inconsolata:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -408,6 +408,11 @@
   .domain-viz   { background: rgba(212,160,23,0.1); color: #8a6000; }
   .domain-ds    { background: rgba(86,182,194,0.1); color: #1a7a82; }
   .domain-stats { background: rgba(255,98,0,0.1);   color: var(--accent-lo); }
+  .domain-copy  { background: rgba(224,90,74,0.1);  color: #b53020; }
+  .domain-mkt   { background: rgba(198,120,221,0.1); color: #8a30aa; }
+  .domain-pos   { background: rgba(212,160,23,0.1); color: #8a6000; }
+  .domain-cont  { background: rgba(63,176,104,0.1); color: #1a7a42; }
+  .domain-psych { background: rgba(86,182,194,0.1); color: #1a7a82; }
   .agent-domain {
     font-size: 13px;
     font-weight: 600;
@@ -627,7 +632,7 @@
 <nav class="topnav">
   <a class="wordmark" href="#">
     Luminary
-    <span>v1.0 · 19 agents</span>
+    <span>v1.1 · 24 agents</span>
   </a>
   <ul class="nav-links">
     <li><a href="#how-it-works">How It Works</a></li>
@@ -641,8 +646,8 @@
 <!-- HERO -->
 <section class="hero">
   <p class="overline">Multi-Agent Technical Review Framework</p>
-  <h1>19 experts.<br><span class="accent">One audit.</span><br>No mercy.</h1>
-  <p class="lede">Drop in your codebase, spec, or architecture decision. Get a structured adversarial review from 19 domain experts — each independent, each opinionated, each synthesized into actionable recommendations.</p>
+  <h1>24 experts.<br><span class="accent">One audit.</span><br>No mercy.</h1>
+  <p class="lede">Drop in your codebase, spec, architecture decision, landing page, or launch plan. Get a structured adversarial review from 24 domain experts — engineering, product, data, and go-to-market — each independent, each opinionated, each synthesized into actionable recommendations.</p>
   <div class="hero-actions">
     <a href="https://github.com/ckluis/luminaryTeam" class="btn-primary">Get the Prompts →</a>
     <a href="#how-it-works" class="btn-secondary">See how it works</a>
@@ -650,7 +655,7 @@
 
   <div class="stats-row">
     <div class="stat">
-      <div class="num"><em>19</em></div>
+      <div class="num"><em>24</em></div>
       <div class="label">Domain experts</div>
     </div>
     <div class="stat">
@@ -746,15 +751,16 @@
 <!-- ROSTER -->
 <section class="roster-section" id="roster">
   <p class="overline">The Team</p>
-  <h2>19 experts.<br><span class="accent">Every domain covered.</span></h2>
-  <p class="section-lede">Each agent brings a defined domain, a distinct personality, explicit conflict vectors, and a signature challenge question. You don't need all 19 — select the subset that covers your highest-risk areas.</p>
+  <h2>24 experts.<br><span class="accent">Every domain covered.</span></h2>
+  <p class="section-lede">Each agent brings a defined domain, a distinct personality, explicit conflict vectors, and a signature challenge question. You don't need all 24 — select the subset that covers your highest-risk areas.</p>
 
   <div class="domain-filter">
-    <button class="filter-btn active" onclick="filterAgents('all', this)">All 19</button>
+    <button class="filter-btn active" onclick="filterAgents('all', this)">All 24</button>
     <button class="filter-btn" onclick="filterAgents('systems', this)">Systems</button>
     <button class="filter-btn" onclick="filterAgents('product', this)">Product</button>
     <button class="filter-btn" onclick="filterAgents('data', this)">Data</button>
     <button class="filter-btn" onclick="filterAgents('safety', this)">Safety</button>
+    <button class="filter-btn" onclick="filterAgents('marketing', this)">Marketing</button>
   </div>
 
   <div class="agents-grid" id="agentsGrid">
@@ -929,6 +935,51 @@
       <div class="agent-focus">Metrics measuring what they claim, A/B test power, false positive rates. Quietly devastating about overconfident inference.</div>
       <div class="agent-redflag"><span class="redflag-label">⚑</span> "Significant" without power analysis; metrics with no confidence interval</div>
     </div>
+    <div class="agent-card" data-group="marketing">
+      <div class="agent-header">
+        <div class="agent-name">David Ogilvy</div>
+        <span class="domain-tag domain-copy">Copy</span>
+      </div>
+      <div class="agent-domain">Advertising &amp; Brand Copywriting</div>
+      <div class="agent-focus">Headline craft, specific promises, facts over adjectives. "If it doesn't sell, it isn't creative." Research before writing. Brand as long-term asset.</div>
+      <div class="agent-redflag"><span class="redflag-label">⚑</span> Headlines that could belong to any brand; cleverness that obscures the offer</div>
+    </div>
+    <div class="agent-card" data-group="marketing">
+      <div class="agent-header">
+        <div class="agent-name">Seth Godin</div>
+        <span class="domain-tag domain-mkt">Mkt</span>
+      </div>
+      <div class="agent-domain">Marketing Strategy &amp; Permission</div>
+      <div class="agent-focus">Remarkable products, smallest viable audience, permission over interruption. "Marketing is a tax paid by unremarkable products."</div>
+      <div class="agent-redflag"><span class="redflag-label">⚑</span> Shouting louder instead of making something worth talking about; targeting "everyone"</div>
+    </div>
+    <div class="agent-card" data-group="marketing">
+      <div class="agent-header">
+        <div class="agent-name">April Dunford</div>
+        <span class="domain-tag domain-pos">Position</span>
+      </div>
+      <div class="agent-domain">Positioning &amp; Go-to-Market Strategy</div>
+      <div class="agent-focus">Best-at-something-specific for a defined best-fit customer, against named competitive alternatives. Allergic to vague, category-generic copy.</div>
+      <div class="agent-redflag"><span class="redflag-label">⚑</span> Positioning that could belong to any competitor in the category</div>
+    </div>
+    <div class="agent-card" data-group="marketing">
+      <div class="agent-header">
+        <div class="agent-name">Ann Handley</div>
+        <span class="domain-tag domain-cont">Content</span>
+      </div>
+      <div class="agent-domain">Content Marketing &amp; Business Writing</div>
+      <div class="agent-focus">Reader-first clarity, voice consistency, useful-before-promotional. Treats jargon and buried ledes as disrespect for the reader.</div>
+      <div class="agent-redflag"><span class="redflag-label">⚑</span> Jargon, buried ledes, voice that differs across surfaces</div>
+    </div>
+    <div class="agent-card" data-group="marketing">
+      <div class="agent-header">
+        <div class="agent-name">Rory Sutherland</div>
+        <span class="domain-tag domain-psych">Behavior</span>
+      </div>
+      <div class="agent-domain">Behavioral Marketing &amp; Persuasion</div>
+      <div class="agent-focus">Framing, signaling, defaults, perception engineering. The irrational-but-real drivers of human choice that spreadsheets miss.</div>
+      <div class="agent-redflag"><span class="redflag-label">⚑</span> Decisions that assume a rational consumer; removing friction that was carrying meaning</div>
+    </div>
   </div>
 </section>
 
@@ -946,7 +997,7 @@
           <span class="c"># In your Claude project:</span><br>
           <span class="k">System:</span> <span class="v">[paste luminaryPrompt.md]</span><br>
           <span class="k">User:</span>   <span class="v">[paste your codebase / spec]</span><br>
-          <span class="e">→ Full 19-member adversarial audit</span>
+          <span class="e">→ Full 24-member adversarial audit</span>
         </div>
       </div>
       <div class="usage-card">
@@ -980,7 +1031,7 @@
 <section class="rules-section" id="rules">
   <p class="overline">Protocol Rules</p>
   <h2>The rules that make<br><span class="accent">it actually work.</span></h2>
-  <p class="section-lede">Luminary's value comes from enforced constraints. These aren't suggestions — they're the structural guarantees that prevent a 19-expert system from collapsing into noise.</p>
+  <p class="section-lede">Luminary's value comes from enforced constraints. These aren't suggestions — they're the structural guarantees that prevent a 24-expert system from collapsing into noise.</p>
   <div class="rules-list">
     <div class="rule-item">
       <div class="rule-icon">→</div>
@@ -1082,6 +1133,46 @@
         </div>
         <p>User experience as first-class vs. user experience as cosmetic. Norman wants the mental model baked into the architecture. Torvalds thinks the interface should reflect the real complexity, not hide it.</p>
       </div>
+      <div class="conflict-card">
+        <div class="vs-row">
+          <span class="vs-name">Ogilvy</span>
+          <span class="vs-badge">vs</span>
+          <span class="vs-name">Godin</span>
+        </div>
+        <p>Classical persuasion at scale vs. remarkable products that earn permission. Ogilvy wants a working headline and a testable promise. Godin says the tax is owed only because the product isn't remarkable enough yet.</p>
+      </div>
+      <div class="conflict-card">
+        <div class="vs-row">
+          <span class="vs-name">Dunford</span>
+          <span class="vs-badge">vs</span>
+          <span class="vs-name">Ogilvy</span>
+        </div>
+        <p>Positioning first vs. copy first. Dunford wants the best-fit customer, the competitive alternatives, and the value ranking nailed down before a single headline is written. Ogilvy wants the headline doing the heaviest lifting in the room.</p>
+      </div>
+      <div class="conflict-card">
+        <div class="vs-row">
+          <span class="vs-name">Sutherland</span>
+          <span class="vs-badge">vs</span>
+          <span class="vs-name">Gelman</span>
+        </div>
+        <p>Psycho-logic vs. statistical rigor. Sutherland trusts the invisible perception variables that drive real choice. Gelman trusts what is measured cleanly, powered correctly, and defensible under scrutiny. Both are right — about different things.</p>
+      </div>
+      <div class="conflict-card">
+        <div class="vs-row">
+          <span class="vs-name">Handley</span>
+          <span class="vs-badge">vs</span>
+          <span class="vs-name">Ogilvy</span>
+        </div>
+        <p>Useful-before-promotional vs. persuasion-first. Handley serves the reader and earns the sale as a consequence. Ogilvy asks for the sale on the page and treats "useful" as the means, not the goal.</p>
+      </div>
+      <div class="conflict-card">
+        <div class="vs-row">
+          <span class="vs-name">Godin</span>
+          <span class="vs-badge">vs</span>
+          <span class="vs-name">Jobs</span>
+        </div>
+        <p>Build a tribe deliberately vs. assume a great product markets itself. Godin wants the permission asset — list, subscribers, story carriers — built on purpose. Jobs expects inevitability to do that work for free.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -1089,7 +1180,7 @@
 <!-- FOOTER -->
 <footer>
   <div class="footer-brand">Luminary Planning</div>
-  <div class="footer-note">19 experts. One audit. No mercy.</div>
+  <div class="footer-note">24 experts. One audit. No mercy.</div>
   <div class="footer-links">
     <a href="https://github.com/ckluis/luminaryTeam">GitHub</a>
     <a href="https://github.com/ckluis/luminaryTeam/blob/main/luminaryPrompt.md">Orchestrator Prompt</a>

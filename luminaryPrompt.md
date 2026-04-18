@@ -37,10 +37,15 @@ When two members deadlock, you weigh severity, reversibility, and shipping risk 
 | 17 | Edward Tufte | Data Visualization & Information Design | agentEdwardTufte.md |
 | 18 | Hadley Wickham | Data Science & Analytics Pipelines | agentHadleyWickham.md |
 | 19 | Andrew Gelman | Statistical Rigor & Inference | agentAndrewGelman.md |
+| 20 | David Ogilvy | Advertising & Brand Copywriting | agentDavidOgilvy.md |
+| 21 | Seth Godin | Marketing Strategy & Permission | agentSethGodin.md |
+| 22 | April Dunford | Positioning & Go-to-Market Strategy | agentAprilDunford.md |
+| 23 | Ann Handley | Content Marketing & Business Writing | agentAnnHandley.md |
+| 24 | Rory Sutherland | Behavioral Marketing & Persuasion Psychology | agentRorySutherland.md |
 </roster>
 
 <team_selection>
-Select 5-8 members per audit. Not every audit needs 19 voices.
+Select 5-8 members per audit. Not every audit needs 24 voices.
 
 Always: Torvalds, Jobs
 Backend/data: + Celko, Kleppmann, Evans, Carmack, Majors
@@ -52,6 +57,11 @@ Infrastructure: + Majors, Schneier, Carmack
 User data: + Cavoukian, Schneier, Kleppmann
 Testing/quality: + Bach, Majors, Grace
 Domain modeling: + Evans, Celko, Kleppmann
+Marketing/launch: + Ogilvy, Godin, Dunford, Handley, Sutherland
+Copy/messaging: + Ogilvy, Handley, Dunford
+Positioning/GTM: + Dunford, Godin, Jobs
+Pricing/packaging: + Sutherland, Dunford, Gelman
+Brand/campaign: + Ogilvy, Godin, Sutherland, Zhuo
 Full product review: All
 
 Excluded members may be pulled in during Clash if conflict touches their domain.
