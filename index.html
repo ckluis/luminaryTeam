@@ -461,6 +461,69 @@
     gap: 24px;
     margin-top: 48px;
   }
+  .usage-grid-4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  @media (max-width: 1100px) {
+    .usage-grid-4 { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  /* MODES */
+  .modes-section {
+    padding: 80px 48px;
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+  .modes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2px;
+    background: var(--rule);
+    border: 1px solid var(--rule);
+    border-radius: 8px;
+    overflow: hidden;
+    margin-top: 48px;
+  }
+  .mode-card {
+    background: var(--bg);
+    padding: 24px 24px 20px;
+    transition: background 0.15s;
+  }
+  .mode-card:hover { background: var(--bg-elev); }
+  .mode-cmd {
+    font-family: var(--font-code);
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--accent);
+    display: block;
+    margin-bottom: 8px;
+    letter-spacing: -0.01em;
+    word-break: break-word;
+  }
+  .mode-desc {
+    font-size: 13px;
+    color: var(--ink-soft);
+    margin-bottom: 10px;
+    line-height: 1.5;
+  }
+  .mode-roster {
+    font-family: var(--font-code);
+    font-size: 11px;
+    color: var(--ink-mute);
+    line-height: 1.6;
+    letter-spacing: 0.2px;
+  }
+  .mode-note {
+    margin-top: 32px;
+    padding: 20px 24px;
+    background: var(--bg-elev);
+    border-left: 3px solid var(--accent);
+    border-radius: 4px;
+    font-size: 14px;
+    color: var(--ink-soft);
+    line-height: 1.6;
+  }
+  .mode-note strong { color: var(--ink); }
   .usage-card {
     background: var(--bg);
     border: 1px solid var(--rule);
@@ -638,6 +701,7 @@
     <li><a href="#how-it-works">How It Works</a></li>
     <li><a href="#roster">Roster</a></li>
     <li><a href="#usage">Usage</a></li>
+    <li><a href="#modes">Modes</a></li>
     <li><a href="#rules">Rules</a></li>
     <li><a href="https://github.com/ckluis/luminaryTeam" class="nav-cta">GitHub</a></li>
   </ul>
@@ -1128,43 +1192,205 @@
 <section class="usage-section" id="usage">
   <div class="usage-inner">
     <p class="overline">How to Use It</p>
-    <h2>Three ways to<br><span class="accent">run the team.</span></h2>
-    <div class="usage-grid">
+    <h2>Four ways to<br><span class="accent">run the team.</span></h2>
+    <p class="section-lede">Luminary works in any LLM chat or Claude project with enough context. Pick the invocation that matches how much you already know about what you need reviewed.</p>
+    <div class="usage-grid usage-grid-4">
       <div class="usage-card">
         <div class="usage-letter">A</div>
-        <h3>Full Team Audit</h3>
-        <p>Paste <code style="font-family:var(--font-code);font-size:0.87em;color:var(--accent-lo)">luminaryPrompt.md</code> into a Claude project or any LLM with a large context window. Include your codebase, spec, or architecture doc. The orchestrator selects the relevant subset and runs the full six-phase protocol.</p>
+        <h3>Default</h3>
+        <p>Paste <code style="font-family:var(--font-code);font-size:0.87em;color:var(--accent-lo)">luminaryPrompt.md</code> and your target. The orchestrator runs Phase 0 intent classification from scratch and picks the relevant 5–10 members.</p>
         <div class="code-block">
-          <span class="c"># In your Claude project:</span><br>
-          <span class="k">System:</span> <span class="v">[paste luminaryPrompt.md]</span><br>
-          <span class="k">User:</span>   <span class="v">[paste your codebase / spec]</span><br>
-          <span class="e">→ Full 39-member adversarial audit</span>
+          <span class="c"># Let the orchestrator decide</span><br>
+          <span class="k">System:</span> <span class="v">[luminaryPrompt.md]</span><br>
+          <span class="k">User:</span>   <span class="v">[target + ask]</span><br>
+          <span class="e">→ Phase 0 picks the team</span>
         </div>
       </div>
       <div class="usage-card">
         <div class="usage-letter">B</div>
-        <h3>Single Agent</h3>
-        <p>Load a specific <code style="font-family:var(--font-code);font-size:0.87em;color:var(--accent-lo)">agent*.md</code> file for a focused single-domain review. Useful when you know the problem domain but want structured, rigorous feedback from that specific lens.</p>
+        <h3>Invocation Mode</h3>
+        <p>Prefix your first message with a mode to start with a preset roster. Phase 0 still runs and can add members — modes never silently drop anyone. See the full list below.</p>
         <div class="code-block">
-          <span class="c"># Example: security-only review</span><br>
-          <span class="k">System:</span> <span class="v">[paste agentBruceSchneier.md]</span><br>
-          <span class="k">User:</span>   <span class="v">[paste your auth code]</span><br>
-          <span class="e">→ Deep single-domain audit</span>
+          <span class="c"># Example: design review</span><br>
+          <span class="k">System:</span> <span class="v">[luminaryPrompt.md]</span><br>
+          <span class="k">User:</span>   <span class="e">/luminaryReview:design</span><br>
+          <span class="v">        [target + ask]</span><br>
+          <span class="e">→ Preset starts the roster</span>
         </div>
       </div>
       <div class="usage-card">
         <div class="usage-letter">C</div>
-        <h3>Custom Roster</h3>
-        <p>Select 3–7 agents whose domains cover your highest-risk areas. Paste <code style="font-family:var(--font-code);font-size:0.87em;color:var(--accent-lo)">luminaryPrompt.md</code> plus the selected agent files. Specify which members to use in your first message.</p>
+        <h3>Single Agent</h3>
+        <p>Load one <code style="font-family:var(--font-code);font-size:0.87em;color:var(--accent-lo)">agent*.md</code> file for a focused single-domain review. When you know the problem domain and want one rigorous lens on it.</p>
         <div class="code-block">
-          <span class="c"># Example: API launch review</span><br>
-          <span class="k">System:</span> <span class="v">[luminaryPrompt + 5 agents]</span><br>
-          <span class="k">User:</span>   <span class="e">"Use only Lauret, Schneier,</span><br>
-          <span class="e">         Celko, Kleppmann, Bach"</span><br>
-          <span class="e">→ Focused multi-domain audit</span>
+          <span class="c"># Example: security-only</span><br>
+          <span class="k">System:</span> <span class="v">[agentBruceSchneier.md]</span><br>
+          <span class="k">User:</span>   <span class="v">[auth code]</span><br>
+          <span class="e">→ Deep single-domain audit</span>
+        </div>
+      </div>
+      <div class="usage-card">
+        <div class="usage-letter">D</div>
+        <h3>Custom Roster</h3>
+        <p>Hand-pick 3–7 agents whose domains cover your highest-risk areas. Paste the orchestrator plus the selected agent files and name the team in your first message.</p>
+        <div class="code-block">
+          <span class="c"># Example: API launch</span><br>
+          <span class="k">System:</span> <span class="v">[luminaryPrompt + agents]</span><br>
+          <span class="k">User:</span>   <span class="e">"Use only Lauret,</span><br>
+          <span class="e">         Schneier, Celko..."</span><br>
+          <span class="e">→ Focused multi-domain</span>
         </div>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- MODES -->
+<section class="modes-section" id="modes">
+  <p class="overline">Invocation Modes</p>
+  <h2>Shortcut presets<br><span class="accent">for common reviews.</span></h2>
+  <p class="section-lede">Start your first message with a mode to pin a starting roster. Phase 0 still runs — it can add members based on risk surfaces and tag matches, but it cannot silently drop pinned members. Modes are text conventions, so they work in any LLM chat.</p>
+
+  <div class="modes-grid">
+    <div class="mode-card">
+      <span class="mode-cmd">/luminaryReview</span>
+      <div class="mode-desc">Default — no preset, full Phase 0 selection from scratch.</div>
+      <div class="mode-roster">Orchestrator picks 5–10 members</div>
+    </div>
+    <div class="mode-card">
+      <span class="mode-cmd">/luminaryReview:architecture</span>
+      <div class="mode-desc">System design, modularity, and maintainability trade-offs.</div>
+      <div class="mode-roster">Torvalds · Evans · Kleppmann · Carmack · Lauret · Majors · Allspaw</div>
+    </div>
+    <div class="mode-card">
+      <span class="mode-cmd">/luminaryReview:backend</span>
+      <div class="mode-desc">Backend services with data and distributed concerns.</div>
+      <div class="mode-roster">Torvalds · Celko · Kleppmann · Evans · Carmack · Majors</div>
+    </div>
+    <div class="mode-card">
+      <span class="mode-cmd">/luminaryReview:api</span>
+      <div class="mode-desc">External API contracts, governance, and security.</div>
+      <div class="mode-roster">Lauret · Schneier · Carmack · Kleppmann · Celko</div>
+    </div>
+    <div class="mode-card">
+      <span class="mode-cmd">/luminaryReview:frontend</span>
+      <div class="mode-desc">Web UI craft — perf, UI systems, a11y, motion.</div>
+      <div class="mode-roster">Russell · Zhuo · Sutton · Norman · Head · Grace</div>
+    </div>
+    <div class="mode-card">
+      <span class="mode-cmd">/luminaryReview:design</span>
+      <div class="mode-desc">Visual, interaction, IA, type, identity, inclusive design.</div>
+      <div class="mode-roster">Norman · Zhuo · Butterick · Scher · Head · Morville · Holmes</div>
+    </div>
+    <div class="mode-card">
+      <span class="mode-cmd">/luminaryReview:ux</span>
+      <div class="mode-desc">End-to-end experience, flows, IA, microcopy, motion.</div>
+      <div class="mode-roster">Norman · Morville · Podmajersky · Head · Zhuo · Holmes</div>
+    </div>
+    <div class="mode-card">
+      <span class="mode-cmd">/luminaryReview:microcopy</span>
+      <div class="mode-desc">Interface voice, error messages, destructive-action clarity.</div>
+      <div class="mode-roster">Podmajersky · Handley · Ogilvy · Norman</div>
+    </div>
+    <div class="mode-card">
+      <span class="mode-cmd">/luminaryReview:a11y</span>
+      <div class="mode-desc">Accessibility compliance plus inclusive design practice.</div>
+      <div class="mode-roster">Sutton · Holmes · Head · Norman</div>
+    </div>
+    <div class="mode-card">
+      <span class="mode-cmd">/luminaryReview:global</span>
+      <div class="mode-desc">Localization, i18n, cultural assumptions, global gateway.</div>
+      <div class="mode-roster">Yunker · Holmes · Podmajersky · Sutton · Zhuo · Dunford</div>
+    </div>
+    <div class="mode-card">
+      <span class="mode-cmd">/luminaryReview:data</span>
+      <div class="mode-desc">OLTP schema, distributed data, domain model alignment.</div>
+      <div class="mode-roster">Celko · Kleppmann · Evans · Kimball · Wickham</div>
+    </div>
+    <div class="mode-card">
+      <span class="mode-cmd">/luminaryReview:warehouse</span>
+      <div class="mode-desc">Analytics modeling — facts, dimensions, grain, SCDs.</div>
+      <div class="mode-roster">Kimball · Celko · Wickham · Tufte · Gelman</div>
+    </div>
+    <div class="mode-card">
+      <span class="mode-cmd">/luminaryReview:analytics</span>
+      <div class="mode-desc">Pipelines, tidy data, metrics validity, visualizations.</div>
+      <div class="mode-roster">Wickham · Gelman · Tufte · Kimball · Celko</div>
+    </div>
+    <div class="mode-card">
+      <span class="mode-cmd">/luminaryReview:ai</span>
+      <div class="mode-desc">LLM/ML features — injection, evals, harm, statistical rigor.</div>
+      <div class="mode-roster">Karpathy · Gebru · Schneier · Bach · Gelman</div>
+    </div>
+    <div class="mode-card">
+      <span class="mode-cmd">/luminaryReview:security</span>
+      <div class="mode-desc">Threat modeling, auth/authz, secrets, supply chain, OSS.</div>
+      <div class="mode-roster">Schneier · Cavoukian · Meeker · Bach · Allspaw</div>
+    </div>
+    <div class="mode-card">
+      <span class="mode-cmd">/luminaryReview:privacy</span>
+      <div class="mode-desc">PII handling, retention, minimization, and IP obligations.</div>
+      <div class="mode-roster">Cavoukian · Schneier · Kleppmann · Meeker</div>
+    </div>
+    <div class="mode-card">
+      <span class="mode-cmd">/luminaryReview:resilience</span>
+      <div class="mode-desc">How systems fail and how operators cope under pressure.</div>
+      <div class="mode-roster">Allspaw · Majors · Bach · Schneier · Torvalds</div>
+    </div>
+    <div class="mode-card">
+      <span class="mode-cmd">/luminaryReview:discovery</span>
+      <div class="mode-desc">Are we building the right thing? Opportunity → solution.</div>
+      <div class="mode-roster">Torres · Jobs · Dunford · Norman</div>
+    </div>
+    <div class="mode-card">
+      <span class="mode-cmd">/luminaryReview:marketing</span>
+      <div class="mode-desc">Positioning, strategy, copy, content, behavior.</div>
+      <div class="mode-roster">Ogilvy · Godin · Dunford · Handley · Sutherland</div>
+    </div>
+    <div class="mode-card">
+      <span class="mode-cmd">/luminaryReview:positioning</span>
+      <div class="mode-desc">Best-at-something-for-somebody, against real alternatives.</div>
+      <div class="mode-roster">Dunford · Godin · Jobs · Torres</div>
+    </div>
+    <div class="mode-card">
+      <span class="mode-cmd">/luminaryReview:copy</span>
+      <div class="mode-desc">Headlines, body, voice, in-product vs. selling register.</div>
+      <div class="mode-roster">Ogilvy · Handley · Podmajersky · Dunford</div>
+    </div>
+    <div class="mode-card">
+      <span class="mode-cmd">/luminaryReview:brand</span>
+      <div class="mode-desc">Identity, voice, remarkable-ness, perception engineering.</div>
+      <div class="mode-roster">Scher · Ogilvy · Godin · Sutherland · Zhuo</div>
+    </div>
+    <div class="mode-card">
+      <span class="mode-cmd">/luminaryReview:launch</span>
+      <div class="mode-desc">End-to-end ship review: product + GTM + ops readiness.</div>
+      <div class="mode-roster">Jobs · Dunford · Godin · Ogilvy · Handley · Sutton · Majors · Allspaw</div>
+    </div>
+    <div class="mode-card">
+      <span class="mode-cmd">/luminaryReview:devrel</span>
+      <div class="mode-desc">First-run experience, community, docs, developer marketing.</div>
+      <div class="mode-roster">Swyx · Grace · Procida · Dunford</div>
+    </div>
+    <div class="mode-card">
+      <span class="mode-cmd">/luminaryReview:docs</span>
+      <div class="mode-desc">Diátaxis structure, DX, microcopy, content voice.</div>
+      <div class="mode-roster">Procida · Grace · Podmajersky · Handley</div>
+    </div>
+    <div class="mode-card">
+      <span class="mode-cmd">/luminaryReview:oss</span>
+      <div class="mode-desc">OSS licensing, SBOM, trademark, supply-chain legal review.</div>
+      <div class="mode-roster">Meeker · Schneier · Torvalds · Grace</div>
+    </div>
+    <div class="mode-card">
+      <span class="mode-cmd">/luminaryReview:full</span>
+      <div class="mode-desc">All 39 members — heavy, but comprehensive.</div>
+      <div class="mode-roster">The entire roster</div>
+    </div>
+  </div>
+
+  <div class="mode-note">
+    <strong>Combine modes with <code style="font-family:var(--font-code);color:var(--accent-lo)">+</code>:</strong> <code style="font-family:var(--font-code);color:var(--accent-lo)">/luminaryReview:architecture+data</code> merges both starting rosters (deduped). Equivalent syntaxes: <code style="font-family:var(--font-code);color:var(--accent-lo)">/luminaryReview:mode</code>, <code style="font-family:var(--font-code);color:var(--accent-lo)">/luminaryReview mode</code>, or <code style="font-family:var(--font-code);color:var(--accent-lo)">mode: mode</code> as the first line. Unknown modes fall back to <code style="font-family:var(--font-code);color:var(--accent-lo)">default</code>.
   </div>
 </section>
 

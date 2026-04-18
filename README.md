@@ -109,14 +109,64 @@ Each agent brings a specific domain, a defined personality, explicit conflict ve
 
 ## Usage
 
-### Option A — Full Team Audit
-Paste the `luminaryPrompt.md` into a Claude project (or any LLM with large context). Include your codebase, spec, or architecture doc. The orchestrator runs Phase 0 (intent classification), selects the relevant subset, and runs the protocol.
+Luminary is designed to work in any LLM chat or Claude project that supports large context. There are four ways to invoke it, from lowest to highest ceremony.
 
-### Option B — Single Agent
-Load a specific `agent*.md` file for a focused single-domain review. Useful when you know the problem domain but want structured, rigorous feedback from that lens.
+### 1. Default invocation — full Phase 0 audit
 
-### Option C — Custom Roster
-Select 3–7 agents whose domains cover your highest-risk areas. Paste `luminaryPrompt.md` plus the selected agent files. Specify "use only these members" in your prompt. (Phase 0 will still run on the classification — just constrained to your picks.)
+Paste `luminaryPrompt.md` as your system or first message. Then paste the target (codebase, spec, landing page, etc.) with your ask. The orchestrator runs Phase 0 intent classification, selects the relevant 5–10 members, and runs the full protocol.
+
+```
+System:  [paste luminaryPrompt.md]
+User:    [paste target]
+         Audit this feature spec for our new billing engine.
+```
+
+### 2. Invocation modes — start with a preset roster
+
+Prefix your first message with a mode. The mode sets the *starting* roster; Phase 0 still runs and can add members based on declared risk surfaces. Modes never silently drop members — they only shape where selection begins.
+
+```
+/luminaryReview                  default — full Phase 0 selection
+/luminaryReview:architecture     Torvalds, Evans, Kleppmann, Carmack, Lauret, Majors, Allspaw
+/luminaryReview:design           Norman, Zhuo, Butterick, Scher, Head, Morville, Holmes
+/luminaryReview:microcopy        Podmajersky, Handley, Ogilvy, Norman
+/luminaryReview:ai               Karpathy, Gebru, Schneier, Bach, Gelman
+/luminaryReview:global           Yunker, Holmes, Podmajersky, Sutton, Zhuo, Dunford
+/luminaryReview:security         Schneier, Cavoukian, Meeker, Bach, Allspaw
+/luminaryReview:marketing        Ogilvy, Godin, Dunford, Handley, Sutherland
+/luminaryReview:full             All 39 members
+```
+
+Equivalent syntaxes: `/luminaryReview:mode`, `/luminaryReview mode`, `mode: mode`. Combine modes with `+` (e.g., `architecture+data`). See the full mode list in `<invocation_modes>` inside `luminaryPrompt.md`.
+
+```
+System:  [paste luminaryPrompt.md]
+User:    /luminaryReview:design
+
+         Review our onboarding flow. [paste artifacts]
+```
+
+### 3. Single agent — focused one-domain review
+
+Load a specific `agent*.md` file without the orchestrator. Useful when you know the problem domain but want a rigorous single-lens critique.
+
+```
+System:  [paste agentBruceSchneier.md]
+User:    Audit this auth implementation.
+```
+
+### 4. Custom roster — hand-picked team
+
+Paste `luminaryPrompt.md` plus the specific `agent*.md` files you want. In your first message, instruct: `use only these members: [names]`. Phase 0 still runs over the constrained roster.
+
+---
+
+### Which should I use?
+
+- **I know broadly what kind of review I want** (architecture, marketing, design, etc.) → **invocation mode**
+- **I want the orchestrator to figure it out from the artifact** → **default**
+- **I want one specific expert's take** → **single agent**
+- **I know exactly who I want** → **custom roster**
 
 ---
 
