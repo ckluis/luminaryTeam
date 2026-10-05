@@ -1,5 +1,9 @@
 # Luminary Planning
 
+> [!NOTE]
+> **Archived.** Luminary is no longer maintained. The repository is read-only; the code and the
+> [project page](https://ckluis.github.io/luminaryTeam/) stay available. Current work: [ckluis.github.io/experiments](https://ckluis.github.io/experiments/).
+
 **v2.1** · A multi-agent technical and go-to-market review framework. Drop in your codebase, feature spec, architecture decision, landing page, or launch plan and get a structured audit from 40 domain-expert personas — each independent, each adversarial, each synthesized into actionable recommendations and, when you ask for one, a sequenced execution plan. The orchestrator echoes its version at the top of every audit, so transcripts are self-identifying.
 
 ---
